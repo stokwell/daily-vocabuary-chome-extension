@@ -1,3 +1,28 @@
+# Daily Vocabulary Chrome Extension
+
+The most secure way to establish a connection between your server and Chrome extension is to use HTTPS (Hypertext Transfer Protocol Secure) with proper encryption and authentication mechanisms. Here's how you can implement this:
+
+Use HTTPS for Server Communication: Ensure that your server supports HTTPS. HTTPS encrypts the data transmitted between the server and the client (in this case, your Chrome extension), protecting it from eavesdropping and tampering.
+
+TLS Certificate: Obtain an SSL/TLS certificate for your server from a trusted Certificate Authority (CA). This certificate ensures that the communication between your server and the Chrome extension is secure and trusted.
+
+Secure Authentication: Implement secure authentication mechanisms on your server. This could involve using tokens (e.g., JWT) or session-based authentication with strong encryption. Authenticate each request from the Chrome extension to ensure that only authorized users can access your server's resources.
+
+Content Security Policy (CSP): Implement CSP headers on your server to mitigate against XSS (Cross-Site Scripting) attacks. CSP helps prevent malicious scripts from executing on your web pages, thereby enhancing security.
+
+Content Security Policy for Extensions: For Chrome extensions, consider using Content Security Policy for extensions (CSPX). CSPX allows you to define a Content Security Policy specific to your Chrome extension, ensuring that only trusted resources are loaded and executed.
+
+Content Security Policy for Web Messaging: If you're using web messaging (e.g., window.postMessage()) to communicate between your server and the Chrome extension, ensure that your CSP headers allow the necessary messaging endpoints.
+
+Implement CORS: Use CORS (Cross-Origin Resource Sharing) headers on your server to control access to your server's resources from different origins. Configure CORS policies to allow requests only from trusted origins (e.g., your Chrome extension's origin).
+
+Encrypted Data Transfer: If your Chrome extension needs to transmit sensitive data to your server, ensure that the data is encrypted before transmission. You can use encryption libraries like CryptoJS in JavaScript to encrypt the data before sending it to the server.
+
+By following these best practices, you can establish a secure connection between your server and Chrome extension, protecting the confidentiality, integrity, and authenticity of the data exchanged between them. Additionally, regularly update and patch your server's software to mitigate against security vulnerabilities.
+
+
+## Sebastian Szczepański's Chrome Extension boilerplate
+
 ![Chrome Extension Webpack](https://user-images.githubusercontent.com/21238816/147307879-a3cb179e-3368-412a-88db-284474183884.png)
 Get started with Chrome extensions development using webpack, TypeScript, Sass, and more.
 
