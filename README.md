@@ -26,6 +26,10 @@ If you need React support, please check this awesome boilerplate created by [Mic
 
 ## Getting started
 
+### Google Chrome official guide
+
+https://developer.chrome.com/docs/extensions/get-started
+
 ### Installing and running
 
 1. Clone the repository

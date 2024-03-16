@@ -1,3 +1,5 @@
+const BASE_URL = "http://localhost:3000";
+
 import { initializeStorageWithDefaults } from './storage';
 
 chrome.runtime.onInstalled.addListener(async () => {
@@ -16,3 +18,16 @@ chrome.storage.onChanged.addListener((changes) => {
     );
   }
 });
+
+// Create Chrome Context Menu
+chrome.contextMenus.create({"id": 'open', "title": 'Open Daily Vocabulary' })
+
+chrome.contextMenus.onClicked.addListener(function(clickData){
+  if (clickData.menuItemId == 'open') {
+    openDV()
+  }
+})
+
+function openDV() {
+  chrome.tabs.create({'url': BASE_URL});
+}
